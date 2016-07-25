@@ -1,0 +1,1 @@
+					<%= image_tag @admin.image.img.url (:special_size), :alt => "#{@admin.first_name} #{@admin.last_name}" %>
