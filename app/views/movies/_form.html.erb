@@ -1,0 +1,35 @@
+<div class="wrapper wrapper_padding">
+	<section class="skinny_wrapper wrapper_padding">
+		<%= form_for @movie, html: { multipart: true } do |f| %>
+			
+			<% if @movie.errors.any? %>
+				<div>
+					<%= @movie.errors.count %>
+					Prevented this movie from saving
+					<ul>
+						<% @movie.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+
+			<div class="field">
+				<%= f.label :tittle %>
+				<%= f.text_field :tittle %><br>
+			</div>
+			
+			<%= f.fields_for :image do |photo| %>
+				<%= photo.label :photo %>
+				<%= photo.file_field :img %>
+			<% end %>
+
+			<div class="btn">
+				<%= f.submit %>
+			</div>
+
+			<%= link_to "Back", movies_path %>
+
+		<% end %>
+	</section>
+</div>

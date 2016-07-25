@@ -1,0 +1,40 @@
+<div class="wrapper">
+	<%= link_to root_path, :class => "icon" do %>
+		<i class="fa fa-home" aria-hidden="true"><span> Home <span></i>
+	<% end %>
+	<section class="skinny_wrapper wrapper_padding">
+		<div class="center-text reduce-line-space">
+			<h2>Contact Me</h2>
+			<p>I'll definitely get back the quickest I can!</p>
+		</div>
+		<%= form_for @message do |f| %>
+			<% if @message.errors.any? %>
+				<div id="error-explanation">
+					<h2>
+						<%= "#{pluralize(@message.errors.count, "error")}" %> 
+						prohibited this message from being sent
+					</h2>
+
+					<ul>
+						<% @message.errors.full_messages.each do |msg| %>
+							<li>
+								<%= msg %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+
+			<%= f.text_field :name, :placeholder =>"Name:", :required => true %>
+
+			<%= f.email_field :email, :placeholder =>"Email:", :required => true %>
+
+			<%= f.text_field :subject, :placeholder =>"Subject:", :required => true %>
+
+			<%= f.text_area :content, :placeholder =>"Message:", :required => true %>
+
+			<%= f.submit 'Send', class: 'button' %>
+
+		<% end %>
+	</section>
+</div>

@@ -1,0 +1,102 @@
+<div class="wrapper wrapper_padding clearfix">
+	<div class="controllers">
+		<%= link_to "Admin", admin_index_path %>
+		<%= link_to "Movies", movies_path %> 
+		<%= link_to "Music", music_index_path %> 
+		<%= link_to "Sports", sports_path %>
+	</div> 
+	<div class="outter_container">
+		<div class="content_container">
+			<div class="top_image-teaser">
+				<div class="top-image">
+					<%= image_tag @admin.image.img.url (:special_size), :alt => "#{@admin.first_name} #{@admin.last_name}" %>
+				</div>
+			</div>
+			<hr> <!-- horizontal line -->
+			<div class="verticleline"> <!-- vertical line -->
+			</div>
+			<section class="inner_content">
+
+				<section id="about">
+					<p class="intro">Well, Hello There!
+						<p class="intro">My name is <span>Mullenga Chiwelle</span>.</p> 
+						<p class="intro">I'm a Full-Stuck web developer.</p>
+					</p>
+					<p class="about_description">
+						<tab1>Since</tab1> early 2015, after a single semester of an introductory course in <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">pure object-oreinted programming languages</a>, I developed a huge interest for the <a href="http://whatis.techtarget.com/definition/Ruby">ruby programming language</a>, subsequently became a <a href="https://en.wikipedia.org/wiki/Ruby_on_Rails">Ruby on Rails</a> enthusiast. Upon accumulating substential knowledge and understanding of the <a href="http://rubyonrails.org/">Ruby on Rails framework</a>, coupled with quite comfortable skills in <a href="https://en.wikipedia.org/wiki/HTML">html</a>, <a href="https://en.wikipedia.org/wiki/CSS">css</a> and <a href="https://en.wikipedia.org/wiki/JavaScript">javascript</a>, I have since developed and contributed to a handful of internet based applications and projects.
+					</p>
+				</section>
+
+				<section class="projects">
+					<p class="projects_description">
+						You can view and read about some of the internet apps I either developed or contributed to, 
+						<br>in the project's section:
+					</p><!--
+					--><%= link_to 'Projects', projects_path, class: "btn btn-alt" %>
+				</section>
+
+				<section class="hobbies clearfix">
+					<h5>Stuff I dig</h5>
+
+					<section class="sport">
+						<h6>Sport</h6>
+						<% @sports.each do |sport| %> 
+							<section class="hobbies_wrapper clearfix">
+								<div class="image_wrapper">
+									<%= image_tag sport.image.img.url(:thumb) %>
+								</div>
+								<div class="info">
+									<h6 class="info-header"><%= sport.name %></h6>
+									<p class="info-text">
+										<%= sport.description %>
+									</p>
+								</div>
+							</section>
+						<% end %>
+					</section><!--
+
+					--><section class="music">
+						<h6>Music</h6>
+						<% @music.each do |music| %>
+							<section class="hobbies_wrapper clearfix">
+								<div class="image_wrapper">
+									<%= image_tag music.image.img.url(:thumb) %>
+								</div>
+								<div class="info">
+									<h6 class="info-header"><%= music.artist %></h6>
+									<p class="info-text">
+										<%= music.description %>
+									</p>
+								</div>
+							</section>
+						<% end %>
+					</section><!--
+
+					--><section class="movies">
+						<h6>Movies</h6>
+						<% @movies.each do |movie| %>
+							<section class="hobbies_wrapper clearfix">
+								<div class="image_wrapper">
+									<%= image_tag movie.image.img.url(:thumb) %>
+								</div>
+								<div class="info">
+									<h6 class="info-header"><%= movie.tittle %></h6>
+									<p class="info-text">
+									</p>
+								</div>
+							</section>
+						<% end %>
+					</section>
+
+				</section>
+
+				<section class="contact">
+					<p class="contact_me">
+						If you would like to contact me or simply say "hello!", feel free to <%= link_to "send me an email", new_message_path %>!
+					</p>
+				</section>
+
+			</section>
+		</div>
+	</div>
+</div>

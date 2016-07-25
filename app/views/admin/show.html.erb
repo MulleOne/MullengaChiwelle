@@ -1,0 +1,19 @@
+<div class="wrapper">
+	<div class="hero clearfix">
+		<div class="hero-image_wrapper">
+			<%= image_tag @admin.image.img.url(:small) %>
+		</div>
+		<div class="hero-info">
+			<h6 class="info-header"><%= @admin.first_name %> <%= @admin.last_name %></h6>
+
+			<p class="info-text">
+				<%= @admin.message.html_safe %>
+			</p>
+		</div>
+	</div>
+	<section class="control">
+		<%= link_to 'Back', admin_index_path %>
+		<%= link_to 'Edit', edit_admin_path %>
+		<%= link_to 'Delete', admin_path, method: :delete, data: {confirm: "Are you sure?"}, class: "give_a_class_name"%>
+	</section>
+</div>

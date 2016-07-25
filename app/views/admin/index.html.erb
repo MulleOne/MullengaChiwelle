@@ -1,0 +1,8 @@
+<div class="wrapper wrapper_padding">
+	<%= link_to root_path, :class => "icon" do %>
+		<i class="fa fa-home" aria-hidden="true"><span> Home <span></i>
+	<% end %>
+	<% @admins.each do |admin| %>
+		<%= link_to "#{admin.first_name} #{admin.last_name}", admin_path(admin) %>
+	<% end %>
+</div>

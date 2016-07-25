@@ -1,0 +1,40 @@
+<div class="wrapper">
+	<section class="skinny_wrapper wrapper_padding">
+		<%= form_for @music, html: { multipart: true } do |f| %>
+			
+			<% if @music.errors.any? %>
+				<div>
+					<%= @music.errors.count %>
+					Prevented this music from saving
+					<ul>
+						<% @music.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+
+			<div class="field">
+				<%= f.label :artist %>
+				<%= f.text_field :artist %><br>
+			</div>
+			
+			<%= f.fields_for :image do |photo| %>
+				<%= photo.label :photo %>
+				<%= photo.file_field :img %>
+			<% end %>
+
+			<div class="field">
+				<%= f.label :description %>
+				<%= f.text_area :description %>
+			</div>	
+
+			<div class="btn">
+				<%= f.submit %>
+			</div>
+
+			<%= link_to "Back", root_path %>
+
+		<% end %>
+	</section>
+</div>

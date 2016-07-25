@@ -1,0 +1,382 @@
+@import 'normalize';
+
+$border: #E9E9E9;
+$dark: #424652;
+$highlight: #8bc6db;
+
+/* 
+  ==================================================
+  Customer styles
+  ==================================================
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wrapper, .skinny_wrapper {
+	margin: 0 auto;
+}
+
+.skinny_wrapper {
+	width: 80%;
+	max-width: 760px;
+}
+
+.wrapper_padding {
+	padding: 4rem 0;
+}
+
+.wrapper {
+	width: 90%;
+	min-width: 500px;
+	border-left: 1px solid $border;
+	border-right: 1px solid $border;
+	position: relative;
+	.icon {
+		color: $dark;
+		font-size: 1.5rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0.1em;
+		padding: 0;
+		span {
+			font-size: 1rem;
+		}
+	}
+	/* Show styles in movies, music and sports*/
+	.hero {
+		width: 50%;
+		height: auto;
+		margin: 0 auto;
+		.hero-image_wrapper {
+			float: left;
+			max-width: 200px; 
+			img {
+				width: auto;
+				height: auto;
+				border: 0.5px solid $border;
+			}
+		}
+		.hero-info {
+			margin-left: 1em;
+			float: left;
+
+			h6 {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.control {
+		width: 50%;
+		height: 2em;
+		margin: 0.5em auto;
+		color: black;
+		a {
+			color: inherit;
+			height: 7em;
+			padding: 0.2em;
+			width: auto;
+			border: 1px solid $border;
+			border-radius: 0.2em;
+			background: #eee;
+			margin-left: 0.1em;
+			margin-right: 0.1em;
+			text-decoration: none;
+		}
+	}
+}
+
+
+/* 
+  ==================================================
+
+	Clearfix
+
+  ==================================================
+*/
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/*Incase of issue, try errasing this below*/
+.clearfix {
+	clear: both;
+	*zoom: 1;
+}
+
+/* 
+  ==================================================
+
+	Notices and Alerts
+
+  ==================================================
+*/
+
+.notice, .alert {
+	text-align: center;
+	padding: 1em, 0;
+	border-bottom: 1px solid $border;
+}
+
+
+/* 
+  ==================================================
+
+	Primary header
+
+  ==================================================
+*/
+
+#primary-header {
+	padding: 1.5em 5%;
+	border-bottom: 1px solid $border;
+	min-width: 500px;
+	.name {
+		font-weight: 700;
+		font-size: .8em;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+		border: 2px solid $border;
+		padding: 1rem;
+		text-decoration: none;
+		color: $dark;
+		float: left;
+	}
+}
+
+/* 
+  ==================================================
+
+  Universal styles
+  
+  ==================================================
+*/
+
+.hidden {
+	display: none;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	   	    box-sizing: border-box;
+}
+
+/* 
+  ==================================================
+
+  Typography
+
+  ==================================================
+*/
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+	color: $dark;
+}
+
+h1, h3, h4, h5, p {
+	margin-bottom: 22px;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
+h4 {
+	font-size: 1.375rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
+
+p, li {
+	font-size: 1.1rem;
+	line-height: 1.75rem;
+}
+
+p, ul, ol {
+	margin: 0 0 1.6em 0;
+}
+
+strong {
+	font-weight: 400;
+}
+
+cite, 
+em {
+	font-style: italic;
+}
+
+/* 
+  ==================================================
+
+  Back to top
+
+  ==================================================
+*/
+
+
+/*.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(232, 98, 86, 0.8) url(..images/img/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  	 -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  		  transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+     -moz-transition: opacity .3s 0s, visibility 0s 0s;
+          transition: opacity .3s 0s, visibility 0s 0s;
+}
+
+.cd-top.cd-is-visible {
+  /* the button becomes visible
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible
+  opacity: .5;
+}
+
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 64px;
+    bottom: 63px;
+  }
+}*/
+
+/* 
+  ==================================================
+
+  Primary footer
+
+  ==================================================
+*/
+
+/* 
+	A real lot of try and error BELOW!
+*/
+
+#primary-footer {
+	padding: 1em 5%;
+	border-top: 1px solid $border;
+	vertical-align: top;
+	min-width: 500px;
+	.copyright {
+		float: left;
+		font-size: .9em;
+		margin: 0;
+		padding-top: 0.2em;
+		padding-bottom: 0.09em;
+		margin-bottom: 1em;
+	}
+	nav {
+		float: right;
+		text-align: center;
+		margin-bottom: 1em;
+		i {
+			font-size: 1.5rem;
+			color: #545863; /*#676a74; /* /*#b3b5b9; $dark;*/
+			margin-left: 0.5em;
+			padding: 0;
+			&:hover {
+				color: $highlight;
+			}
+			
+		}
+		.fa-twitter {
+			&:hover {
+				color: #00aced;
+			}
+		}
+		.fa-linkedin {
+			&:hover {
+				color: #007bb6;
+			}
+		}
+		.fa-github {
+			&:hover {
+				color: #333333;
+			}
+		}
+		#quora {
+			font-size: 1rem;
+			font-weight: 550;
+			color: #545863; /*#676a74;*/
+			vertical-align: top;
+			margin-left: 0.7em;
+			padding-top: 0.25em;
+			padding-bottom: 0.32em;
+			height: 100%;
+			&:hover {
+				color: #a82400;
+			}
+		}
+
+    }
+}
+
+
+@import 'pages';
+@import 'messages';
+@import 'projects';
+@import 'movies';
+@import 'music';
+@import 'sports';

@@ -1,0 +1,18 @@
+<div class="wrapper wrapper_padding">
+	<div class="hero clearfix">
+		<div class="hero-image_wrapper">
+			<%= image_tag @sport.image.img.url(:small) %>
+		</div>
+		<div class="hero-info">
+			<h6 class="info-header"><%= @sport.name %></h6>
+			<p class="info-text">
+				<%= @sport.description %>
+			</p>
+		</div>
+	</div>
+	<section class="control">
+		<%= link_to 'Back', sports_path %>
+		<%= link_to 'Edit', edit_sport_path %>
+		<%= link_to 'Delete', movie_path, method: :delete, data: {confirm: "Are you sure?"}, class: "give_a_class_name"%>
+	</section>
+</div>

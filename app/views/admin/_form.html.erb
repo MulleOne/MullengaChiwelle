@@ -1,0 +1,46 @@
+<div class="wrapper">
+	<section class="skinny_wrapper wrapper_padding">
+		<%= form_for @admin, url: new_admin_path,  html: { multipart: true } do |f| %>
+			
+			<% if @admin.errors.any? %>
+				<div>
+					<%= @admin.errors.count %>
+					Prevented this admin from saving
+					<ul>
+						<% @admin.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+
+			<div class="field">
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name %><br>
+			</div>
+			
+
+			<div class="field">
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name %><br>
+			</div>
+			
+			<%= f.fields_for :image do |photo| %>
+				<%= photo.label :photo %>
+				<%= photo.file_field :img %>
+			<% end %><br>
+
+			<div class="field">
+				<%= f.label :message %>
+				<%= f.text_area :message %>
+			</div>	
+
+			<div class="btn">
+				<%= f.submit %>
+			</div>
+
+			<%= link_to "Back", admin_index_path %>
+
+		<% end %>
+	</section>
+</div>

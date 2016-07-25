@@ -1,0 +1,13 @@
+<div class="wrapper wrapper_padding">
+	<%= link_to root_path, :class => "icon" do %>
+		<i class="fa fa-home" aria-hidden="true"><span> Home <span></i>
+	<% end %>
+	<%= link_to "New sport", new_sport_path %>
+	<ul>	
+		<% @sports.each do |sport| %>
+			<li>
+				<%= link_to sport.name, sport %>
+			</li>
+		<% end %>		
+	</ul>
+</div>

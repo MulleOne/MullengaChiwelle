@@ -1,0 +1,15 @@
+<div class="wrapper wrapper_padding">
+	<div class="hero clearfix">
+		<div class="hero-image_wrapper">
+			<%= image_tag @movie.image.img.url(:small) %>
+		</div>
+		<div class="hero-info">
+			<%= @movie.tittle %>
+		</div>
+	</div>
+	<section class="control">
+		<%= link_to 'Back', movies_path %>
+		<%= link_to 'Edit', edit_movie_path %>
+		<%= link_to 'Delete', movie_path, method: :delete, data: {confirm: "Are you sure?"}, class: "give_a_class_name"%>
+	</section>
+</div>

@@ -1,0 +1,18 @@
+<div class="wrapper wrapper_padding">
+	<div class="hero clearfix">
+		<div class="hero-image_wrapper">
+			<%= image_tag @music.image.img.url(:small) %>
+		</div>
+		<div class="hero-info">
+			<h6 class="info-header"><%= @music.artist %></h6>
+			<p class="info-text">
+				<%= @music.description %>
+			</p>
+		</div>
+	</div>
+	<section class="control">
+		<%= link_to 'Back', music_index_path %>
+		<%= link_to 'Edit', edit_music_path %>
+		<%= link_to 'Delete', movie_path, method: :delete, data: {confirm: "Are you sure?"}, class: "give_a_class_name"%>
+	</section>
+</div>
