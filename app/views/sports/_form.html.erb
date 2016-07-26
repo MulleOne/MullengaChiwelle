@@ -24,6 +24,7 @@
 				<% if @sport.image.present? %>
 					<%= image_tag @sport.image.img.url(:xsmall) %>
 				<% end %>
+				<%= photo.file_field :img %>
 			<% end %>
 
 			<div class="field">
