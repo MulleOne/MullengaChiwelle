@@ -40,28 +40,17 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   #personally added this line below!
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  config.action_mailer.raise_delivery_errors = true
-
-  config.action_mailer.delivery_method = :message_me
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
+  #config.action_mailer.delivery_method = :message_me
+  #ActionMailer::Base.perform_deliveries = true
+  #ActionMailer::Base.raise_delivery_errors = true
 
 
 
   #config.action_mailer.delivery_method = :smtp
   #config.action_mailer.delivery_method = true
-  config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :enable_starttls_auto => true,
-    :user_name => '',
-    :password => '',
-    :domain => 'localhost'
-  }
+  
 
-  config.action_mailer.perform_deliveries = true
+  #config.action_mailer.perform_deliveries = true
 
 end

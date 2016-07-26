@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :projects, only: [:index]
   resources :admin
+  resources :contacts, only: [:new, :create]
   resources :music 
   resources :sports
   resources :movies
