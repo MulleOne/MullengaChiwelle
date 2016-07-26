@@ -9,6 +9,11 @@
 		<div class="content_container">
 			<div class="top_image-teaser">
 				<div class="top-image">
+					<% if @admin %>
+						<%= image_tag @admin.image.img.url (:special_size), :alt => "#{@admin.first_name} #{@admin.last_name}" %>
+					<% else %>
+						<img src="One.jpg" alt="Mullenga Chiwelle">
+					<% end %>
 				</div>
 			</div>
 			<hr> <!-- horizontal line -->
@@ -18,7 +23,15 @@
 
 				<section id="about">
 					<p class="intro">Well, Hello There!
-						<p class="intro">My name is <span><%="#{@admin.first_name} #{@admin.last_name}"%></span>.</p> 
+						<p class="intro">My name is 
+							<span>
+								<% if @admin %>
+								  	<%="#{@admin.first_name} #{@admin.last_name}"%>
+								<% else %>
+									Mullenga Chiwelle
+								<% end %>
+							</span>.
+						</p> 
 						<p class="intro">I'm a Full-Stuck web developer.</p>
 					</p>
 					<p class="about_description">
