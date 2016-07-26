@@ -1,5 +1,5 @@
 class SportsController < ApplicationController
-  before_action :find_sport, only: [ :edit, :show ]
+  before_action :find_sport, only: [ :edit, :show, :update, :destroy ]
 
   def index
   	@sports = Sport.all
@@ -26,6 +26,11 @@ class SportsController < ApplicationController
   end
 
   def update
+    if @sport.update(sport_params)
+      redirect_to @sport, notice: 'Successfully updated the sport!'
+    else
+      render 'edit'
+    end
   end
 
   def destroy 

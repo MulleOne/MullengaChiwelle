@@ -18,9 +18,12 @@
 				<%= f.label :artist %>
 				<%= f.text_field :artist %><br>
 			</div>
-			
+
 			<%= f.fields_for :image do |photo| %>
-				<%= photo.label :photo %>
+				<%= photo.label :photo %>:<br>
+				<% if photo.present? %>
+					<%= image_tag @music.image.img.url(:xsmall) %>
+				<% end %>
 				<%= photo.file_field :img %>
 			<% end %>
 

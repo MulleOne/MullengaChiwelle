@@ -15,12 +15,15 @@
 			<% end %>
 
 			<div class="field">
-				<%= f.label :tittle %>
+				<%= f.label :tittle %>:
 				<%= f.text_field :tittle %><br>
 			</div>
 			
 			<%= f.fields_for :image do |photo| %>
-				<%= photo.label :photo %>
+				<%= photo.label :photo %>:<br>
+				<% if photo.present? %>
+					<%= image_tag @movie.image.img.url(:xsmall) %>
+				<% end %>
 				<%= photo.file_field :img %>
 			<% end %>
 

@@ -1,6 +1,6 @@
 <div class="wrapper">
 	<section class="skinny_wrapper wrapper_padding">
-		<%= form_for @admin, url: new_admin_path,  html: { multipart: true } do |f| %>
+		<%= form_for @admin,  html: { multipart: true } do |f| %>
 			
 			<% if @admin.errors.any? %>
 				<div>
@@ -26,9 +26,13 @@
 			</div>
 			
 			<%= f.fields_for :image do |photo| %>
-				<%= photo.label :photo %>
-				<%= photo.file_field :img %>
-			<% end %><br>
+				<%= photo.label :photo %>:<br>
+				<% if @admin.image.img.present? %>
+					<%= image_tag @admin.image.img.url(:xsmall) %>
+				<% else %>
+					<%= photo.file_field :img %>
+				<% end %>
+			<% end %>
 
 			<div class="field">
 				<%= f.label :message %>

@@ -20,8 +20,10 @@
 			</div>
 			
 			<%= f.fields_for :image do |photo| %>
-				<%= photo.label :photo %>
-				<%= photo.file_field :img %>
+				<%= photo.label :photo %>:<br>
+				<% if photo.present? %>
+					<%= image_tag @sport.image.img.url(:xsmall) %>
+				<% end %>
 			<% end %>
 
 			<div class="field">

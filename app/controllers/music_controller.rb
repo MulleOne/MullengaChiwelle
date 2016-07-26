@@ -1,5 +1,5 @@
 class MusicController < ApplicationController
-  before_action :find_music, only: [ :edit, :show ]
+  before_action :find_music, only: [ :edit, :show, :update, :destroy ]
 
   def index
   	@music = Music.all
@@ -26,6 +26,11 @@ class MusicController < ApplicationController
   end
 
   def update
+    if @music.update(music_params)
+      redirect_to @music, notice: 'Successfully updated the music!'
+    else
+      render 'edit'
+    end
   end
 
   def destroy 
