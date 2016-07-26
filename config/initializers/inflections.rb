@@ -17,4 +17,5 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
    inflect.uncountable %w( music )
+   inflect.uncountable %w( admin )
 end

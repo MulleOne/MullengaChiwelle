@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
   resources :projects, only: [:index]
-  resources :admin, :controller => 'admin' 
+  resources :admin
   resources :music 
   resources :sports
   resources :movies
