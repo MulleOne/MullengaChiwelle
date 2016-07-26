@@ -7,6 +7,4 @@ class Image < ActiveRecord::Base
   validates_attachment_content_type :img, content_type: /\Aimage\/.*\Z/
   validates_attachment :img, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
-  #attr_accessible :img_content_type, :img_file_name, :img_file_size, :img
-
 end

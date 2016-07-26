@@ -21,7 +21,7 @@
 			
 			<%= f.fields_for :image do |photo| %>
 				<%= photo.label :photo %>:<br>
-				<% if photo.present? %>
+				<% if @sport.image.present? %>
 					<%= image_tag @sport.image.img.url(:xsmall) %>
 				<% end %>
 			<% end %>

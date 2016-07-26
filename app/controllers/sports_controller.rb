@@ -41,7 +41,7 @@ class SportsController < ApplicationController
   private
 
   def sport_params
-  	params.require(:sport).permit( :name, :description, :image_attributes => [:img] )
+  	params.require(:sport).permit( :name, :description, :image_attributes => [:id, :img] ) #interesting results if :id is missing
   end
 
   def find_sport

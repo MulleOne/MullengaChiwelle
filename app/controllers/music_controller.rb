@@ -41,7 +41,7 @@ class MusicController < ApplicationController
   private
 
   def music_params
-  	params.require(:music).permit( :artist, :description, :image_attributes => [:img] )
+  	params.require(:music).permit( :artist, :description, :image_attributes => [:id, :img] )
   end
 
   def find_music

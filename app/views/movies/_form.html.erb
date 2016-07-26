@@ -21,9 +21,9 @@
 			
 			<%= f.fields_for :image do |photo| %>
 				<%= photo.label :photo %>:<br>
-				<% if photo.present? %>
+				<% if @movie.image.present? %>
 					<%= image_tag @movie.image.img.url(:xsmall) %>
-				<% end %>
+				<% end %><br>
 				<%= photo.file_field :img %>
 			<% end %>
 

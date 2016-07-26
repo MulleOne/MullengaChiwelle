@@ -35,8 +35,9 @@ $links: #8D5531;
 	width: 95%;
 	margin: 0 auto;
 	padding-right: 2.5rem;
+	max-width: 1000px;
 	.content_container {
-		width: 90%;
+		width: 95%;
 		margin: 0 auto;
 		border: 2px solid $border;
 		border-radius: 0.5rem; 
@@ -112,7 +113,7 @@ $links: #8D5531;
 				.intro {
 					margin-right: 12rem;
 					font-size: 2.5rem;
-					font-weight: 350;
+					font-weight: 300;
 					text-align: center;
 					margin-top: 1.5rem;
 					margin-bottom: 0;
@@ -122,7 +123,9 @@ $links: #8D5531;
 					} 
 				}
 				.about_description {
-					font-size: 20px;
+					font-size: 1.4rem;
+					font-weight: 350;
+					color: #000000;
 					text-align: justify;
 					margin-top: 5px;
 					margin-bottom: 5px;
@@ -136,7 +139,7 @@ $links: #8D5531;
 						text-decoration: none;
 						color: $links;
 						&:hover {
-							color: black;
+							color: #000000;
 						}
 					}
 				}
@@ -147,8 +150,9 @@ $links: #8D5531;
 				margin: 2em 0;
 				padding: 3px;
 				.projects_description {
-					font-size: 16px;
+					font-size: 1rem;
 					font-weight: 350;
+					color: #000000;
 					text-align: center;
 					height: auto;
 					margin: 0;
@@ -269,6 +273,7 @@ $links: #8D5531;
 						.info-text {
 							font-size: 16px;
 							font-weight: 350;
+							color: #000000;
 							text-transform: none;
 							-webkit-text-size-adjust:none;
 							margin: 0;
@@ -301,7 +306,8 @@ $links: #8D5531;
 				.contact_me {
 					display: block;
 					text-align: center;
-					font-size: 16px;
+					font-size: 1rem;
+					color: #000000;
 					padding: 0;
 					margin: 0;
 					a {

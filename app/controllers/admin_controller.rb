@@ -36,7 +36,7 @@ class AdminController < ApplicationController
   private
 
   def admin_params
-  	params.require(:admin).permit(:first_name, :last_name, :message, :image_attributes => [:img] )
+  	params.require(:admin).permit(:first_name, :last_name, :message, :image_attributes => [:id, :img] )
   end
 
   def find_admin

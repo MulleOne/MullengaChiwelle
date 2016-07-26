@@ -27,11 +27,10 @@
 			
 			<%= f.fields_for :image do |photo| %>
 				<%= photo.label :photo %>:<br>
-				<% if @admin.image.img.present? %>
+				<% if @admin.image.present? %>
 					<%= image_tag @admin.image.img.url(:xsmall) %>
-				<% else %>
-					<%= photo.file_field :img %>
-				<% end %>
+				<% end %><br>
+				<%= photo.file_field :img %>
 			<% end %>
 
 			<div class="field">

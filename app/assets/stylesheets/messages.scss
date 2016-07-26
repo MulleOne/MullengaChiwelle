@@ -1,43 +1,48 @@
 $border: #E9E9E9;
 $dark: #424652;
 $highlight: #8bc6db;
-
-.center-text {
-	width: 100%;
-	text-align: center;
-	margin-top: 0;
-	h2 {
+.contact {
+	max-width: 760px;
+	.center-text {
+		width: 100%;
+		text-align: center;
 		margin-top: 0;
-		margin-bottom: 0.3em;
+		h2 {
+			margin-top: 0;
+			margin-bottom: 0.3em;
+			color: #000000;
+		}
 	}
-}
 
-input[type="text"], input[type="email"], input[type="password"], textarea {
-	font-size: 16px;
-	width: 100%;
-	max-width: 100%;
-	height: 3em;
-	border: 2px solid $border;
-	padding: 0.5em;
-	margin: .5em 0 2em 0;
-}
+	input[type="text"], input[type="email"], input[type="password"], textarea {
+		font-size: 16px;
+		width: 100%;
+		max-width: 100%;
+		color: #000000;
+		height: 3em;
+		border: 2px solid $border;
+		padding: 0.5em;
+		margin: .5em 0 2em 0;
+	}
 
-textarea {
-	min-height: 20em;
-	min-width: 100%;
-}
+	textarea {
+		min-height: 20em;
+		min-width: 100%;
+		color: #000000;
+	}
 
-input[type="submit"], .button {
-	outline: none;
-	background: transparent;
-	border: 2px solid $border;
-	text-align: center;
-	font-size: 1em;
-	color: $dark;
-	text-decoration: none;
-	padding: 1em 2em;
-	&:hover {
-		border: 2px solid $highlight;
-		color: $highlight;
+	input[type="submit"], .button {
+		outline: none;
+		background: transparent;
+		border: 2px solid $border;
+		text-align: center;
+		font-size: 1em;
+		color: #000000;
+		text-decoration: none;
+		padding: 1em 2em;
+		&:hover {
+			border: 2px solid $highlight;
+			color: $highlight;
+		}
 	}
 }
